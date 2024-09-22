@@ -3,17 +3,13 @@ let msg = document.querySelector('p');
 let reset = document.querySelector('button');
 let jogada = "O";
 
-// Lógica
 
 bloco.forEach(casa => {
     casa.addEventListener('click', event => {
-        //Lógica para realizar uma jogada
         if(casa.innerHTML == "")
         {
             casa.innerText = jogada;
-            // Trocar a jogada
             jogada = jogada == "X" ? "O" : "X";
-            // Atualizando a mensagem do próximo a jogar
             msg.innerText = `Próximo a jogar: ${jogada}`
             verificarGanhador();            
         }
